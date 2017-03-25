@@ -1,5 +1,5 @@
 
-angular.module('twitchTvApp',[])
+angular.module('app.services',[])
 .factory('twitchApi', function(){
 
 });
