@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class='container' ng-include='"partials/app-body.html"'></div>
+    <div class='container' ng-controller='MainCtrl' ng-include='"partials/app-body.html"'></div>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -36,9 +36,11 @@
     <!-- Angular App -->
     <script src="js/app/app.js"></script>
     <!-- Controllers -->
-    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/controllers/ctrls.js"></script>
     <!-- Services -->
-    <script src="js/services/twitchApi.js"></script>
+    <script src="js/services/srv.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/ventor/Bootstrap/bootstrap.min.js"></script>
 
 </body>
 
