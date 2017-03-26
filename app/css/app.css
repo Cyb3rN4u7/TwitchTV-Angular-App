@@ -1,0 +1,13 @@
+.tool-bar{
+  background-color:lightgreen;
+}
+.channels{
+  background-color: lightblue;
+  padding-bottom: 300px;
+}
+.Footer{
+  background-color: navy;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+}
