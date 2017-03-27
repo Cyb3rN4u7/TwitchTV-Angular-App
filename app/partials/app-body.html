@@ -15,30 +15,32 @@
 
     </div>
 
-    <a href="#" class="btn btn-primary btn-selection" ng-click="channels = !channels">{{channels ? 'Online':'Offline'}}</a>
+    <a href="#" class="btn btn-primary btn-selection" ng-click="isOnline = !isOnline">{{isOnline ? 'Online':'Offline'}}</a>
 </div>
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-1 well channels">
-      
-        <div ng-show="channels"  class="row">
-          <div class="col-md-6 col-md-offset-3 well">
-              <h1>{{channelData.display_name | uppercase}}</h1>
-              <a ng-href="{{channelData.url}}" target="_blank"><img class='img-responsive center-block' ng-src='{{channelData.logo}}' /></a>
-              <ul class='list-group text-left details'>
+    <div class="col-md-10 col-md-offset-1 well channels" ng-repeat="channel in channelData" ng-show='isOnline'>
+        <div class="row" style="background:url({{channel.video_banner}});background-size:cover;">
+          <div class="col-md-10 col-md-offset-1 well">
+
+              <a ng-href="{{channel.url}}" target="_blank"><img class='img-responsive center-block img-logo' ng-src='{{channel.logo}}' /></a>
+              <h1 class='channel-title'>{{channelData.display_name | uppercase}}</h1>
+              <ul class='list-group text-left details list-inline'>
                 <li class="list-group-item">
-                  Status : {{channelData.status ? channelData.status : 'Offline'}}
+                  Status : {{(channel.status)}}
+
                 </li>
                 <li class="list-group-item">
-                  Followers : {{channelData.followers}}
+                  Followers : {{channel.followers}}
                 </li>
                 <li class="list-group-item">
-                  Views : {{channelData.views}}
+                  Views : {{channel.views}}
                 </li>
                 <li class="list-group-item">
-                 Updated at :  {{channelData.updated_at | date}}
+                 Updated at :  {{channel.updated_at | date}}
                 </li>
               </ul>
+
           </div>
 
 
