@@ -4,7 +4,10 @@ padding-bottom: 40px;
 }
 .channels{
   background-color: lightblue;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
+}
+.details{
+  margin-top: 30px;
 }
 .Footer{
   background-color: navy;

@@ -5,7 +5,7 @@
 
     <div class='col-md-6 tool-bar well'>
 
-        <form action="" class="search-form">
+        <form ng-submit='getChannel(search)' class="search-form">
             <div class="form-group has-feedback">
                 <label for="search" class="sr-only">Search</label>
                 <input type="text" class="form-control" name="search" id="search" placeholder="search" ng-model='search'>
@@ -15,15 +15,41 @@
 
     </div>
 
-          <a href="#" class="btn btn-primary btn-selection" ng-click="channels = !channels">{{channels ? 'Online':'Offline'}}</a>
+    <a href="#" class="btn btn-primary btn-selection" ng-click="channels = !channels">{{channels ? 'Online':'Offline'}}</a>
 </div>
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1 well channels">
-        <h1>Channels</h1>
+      
+        <div ng-show="channels"  class="row">
+          <div class="col-md-6 col-md-offset-3 well">
+              <h1>{{channelData.display_name | uppercase}}</h1>
+              <a ng-href="{{channelData.url}}" target="_blank"><img class='img-responsive center-block' ng-src='{{channelData.logo}}' /></a>
+              <ul class='list-group text-left details'>
+                <li class="list-group-item">
+                  Status : {{channelData.status ? channelData.status : 'Offline'}}
+                </li>
+                <li class="list-group-item">
+                  Followers : {{channelData.followers}}
+                </li>
+                <li class="list-group-item">
+                  Views : {{channelData.views}}
+                </li>
+                <li class="list-group-item">
+                 Updated at :  {{channelData.updated_at | date}}
+                </li>
+              </ul>
+          </div>
+
+
+        </div>
 
     </div>
+
+
+
 </div>
+
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1  Footer">
