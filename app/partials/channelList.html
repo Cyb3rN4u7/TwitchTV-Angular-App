@@ -12,6 +12,10 @@
       <li class="list-group-item list">
         {{channel.message ? channel.message : (channel.display_name | uppercase)}}
       </li>
+      <li class="list-group-item list">
+        <a href="#" class='btn btn-primary' ng-click="searchChannel(channel.display_name)">See Details</a>
+      </li>
+
     </ul>
 
 
