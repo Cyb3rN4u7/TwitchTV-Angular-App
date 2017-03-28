@@ -1,0 +1,24 @@
+<div class="container  text-center ">
+  <h1>Featured Channels</h1>
+  <div ng-repeat="channel in channelData" class="col-sm-3">
+
+    <ul class='list-group  details'>
+      <li class="list-group-item list" >
+        <a ng-href="{{channel.url}}" target="_blank">  <img class='img-responsive center-block' ng-src='{{channel.logo ? channel.logo : "https://www.spe.org/iapps/abstractsubmission/Content/images/stop.png"}}' />
+      </a>
+
+
+      </li>
+      <li class="list-group-item list">
+        {{channel.message ? channel.message : (channel.display_name | uppercase)}}
+      </li>
+    </ul>
+
+
+
+
+
+  </div>
+</div>
+
+                                                                                 <!--Hide if error -->

@@ -1,0 +1,33 @@
+<div class="row">                                                                                   <!--Hide if error -->
+    <div class="col-md-10 col-md-offset-1 well channels" ng-show='{{searchedChannelData.followers ? false : true}}'>
+        <div class="row" style="background:url({{searchedChannelData.video_banner}});background-size:cover;">
+          <div class="col-md-10 col-md-offset-1 well-xs" >
+
+              <a ng-href="{{searchedChannelData.url}}" target="_blank"><img class='img-responsive center-block' width="256px" ng-src='{{searchedChannelData.logo}}' /></a>
+              <h1 class='channel-title'>{{searchedChannelData.display_name | uppercase}}</h1>
+              <ul class='list-group text-left details list-inline'>
+                <li class="list-group-item">
+                  {{(searchedChannelData.status)}}
+
+                </li>
+                <li class="list-group-item">
+                  Followers : {{searchedChannelData.followers}}
+                </li>
+                <li class="list-group-item">
+                  Views : {{searchedChannelData.views}}
+                </li>
+                <li class="list-group-item">
+                 Updated at :  {{searchedChannelData.updated_at | date}}
+                </li>
+              </ul>
+
+          </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
