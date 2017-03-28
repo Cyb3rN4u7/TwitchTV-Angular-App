@@ -10,7 +10,7 @@ $scope.isOnline = true;
 $scope.channelData = [];
 $scope.channelsList = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp","LeagueofLegends", "habathcx", "RobotCaleb", "noobs2ninjas"];
 $scope.getChannel = function(searchTxt){
-  var apiUrl = 'http://wind-bow.glitch.me/twitch-api/channels/';
+  var apiUrl = 'https://wind-bow.glitch.me/twitch-api/channels/';
   $http({
         method: 'GET',
         url: apiUrl + searchTxt,
@@ -30,7 +30,7 @@ $scope.getChannel = function(searchTxt){
 $scope.searchChannel = function(searchTxt){
   // ugly way to go to top of page
   scroll(0,0);
-  var apiUrl = 'http://wind-bow.glitch.me/twitch-api/channels/';
+  var apiUrl = 'https://wind-bow.glitch.me/twitch-api/channels/';
   $http({
         method: 'GET',
         url: apiUrl + searchTxt,
