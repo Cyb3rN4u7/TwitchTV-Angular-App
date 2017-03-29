@@ -10,10 +10,10 @@
 
       </li>
       <li class="list-group-item list">
-        {{channel.message ? channel.message : (channel.display_name | uppercase)}}
+        <p>{{channel.message ? channel.message : (channel.display_name | uppercase)}}</p>
       </li>
       <li class="list-group-item list">
-        <a href="#" class='btn btn-success' ng-click="searchChannel(channel.display_name)">See Details</a>
+        <a href="#" class='btn btn-success' data-toggle="modal" data-target="#myModal" ng-click="searchChannel(channel.display_name)">See Details</a>
       </li>
 
     </ul>
@@ -23,6 +23,42 @@
 
 
   </div>
-</div>
 
-                                                                                 <!--Hide if error -->
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modal-title" class="modal-title">{{searchedChannelData.display_name| uppercase}}</h4>
+        </div>
+        <div class="modal-body" style="background:url({{searchedChannelData.video_banner}}) center center;background-size:cover;">
+  <a ng-href="{{searchedChannelData.url}}" target="_blank">  <img class='img-responsive center-block' ng-src='{{searchedChannelData.logo ? searchedChannelData.logo : "https://www.spe.org/iapps/abstractsubmission/Content/images/stop.png"}}' />
+          <ul class='list-group text-left details list-inline'>
+            <li class="list-group-item">
+              {{(searchedChannelData.status)}}
+
+            </li>
+            <li  class="list-group-item">
+              Followers : {{searchedChannelData.followers}}
+            </li>
+            <li  class="list-group-item">
+              Views : {{searchedChannelData.views}}
+            </li>
+            <li class="list-group-item">
+             Updated at :  {{searchedChannelData.updated_at | date}}
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+                                                                               <!--Hide if error -->
+</div>

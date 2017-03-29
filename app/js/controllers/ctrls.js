@@ -1,6 +1,6 @@
 
 angular.module('app.controllers',[])
-.controller('MainCtrl', ['$scope','$http',function($scope,$http){
+.controller('MainCtrl', ['$scope','$http','twitchApi',function($scope,$http,twitchApi){
 
 $scope.a = 'It works!!!';
 $scope.search = 'Search';
@@ -9,16 +9,9 @@ $scope.searched = false;
 $scope.isOnline = true;
 $scope.channelData = [];
 $scope.channelsList = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp","LeagueofLegends", "habathcx", "RobotCaleb", "noobs2ninjas"];
-$scope.getChannel = function(searchTxt){
-  var apiUrl = 'https://wind-bow.glitch.me/twitch-api/channels/';
-  $http({
-        method: 'GET',
-        url: apiUrl + searchTxt,
-        params: {
-            format: 'json',
-            json_callback: 'callback'
-        }
-    }).success(function (data){
+$scope.searchedList =[];
+$scope.getChannels = function(searchTxt){
+  twitchApi.channel(searchTxt).success(function (data){
     $scope.channelData.push(data);
     $scope.channels = true;
   }).error(function(data){
@@ -27,19 +20,13 @@ $scope.getChannel = function(searchTxt){
   });
 }
 
+
 $scope.searchChannel = function(searchTxt){
-  // ugly way to go to top of page
-  scroll(0,0);
-  var apiUrl = 'https://wind-bow.glitch.me/twitch-api/channels/';
-  $http({
-        method: 'GET',
-        url: apiUrl + searchTxt,
-        params: {
-            format: 'json',
-            json_callback: 'callback'
-        }
-    }).success(function (data){
+  // an ugly way to go to top of page
+//  scroll(0,0);
+  twitchApi.channel(searchTxt).success(function (data){
     $scope.searchedChannelData = data ;
+    $scope.searchedList.push(searchTxt);
     $scope.searched = true;
   }).error(function(data){
       alert(data.message);
@@ -47,12 +34,11 @@ $scope.searchChannel = function(searchTxt){
   });
 }
 
-//$scope.getChannel('freecodecamp');
+//Display featured channels from channelsList
 for (channel in $scope.channelsList){
   //alert($scope.channelsList[channel]);
-  $scope.getChannel($scope.channelsList[channel]);
+  $scope.getChannels($scope.channelsList[channel]);
 }
-
 
 }])
 
