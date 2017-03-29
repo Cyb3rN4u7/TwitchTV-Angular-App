@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "An angular app made for exploring TwitchTV",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "http-server": "^0.9.0"
   },
   "scripts": {
-
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app"
   },
