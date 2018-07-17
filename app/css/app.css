@@ -65,7 +65,7 @@ h1.channel-title {
 }
 
 .app-title-div {
-    background-color: purple;
+    background-color: #2a0345;
     color: white;
 }
 
@@ -82,10 +82,12 @@ h1.channel-title {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     border-radius: 25px;
     border: 1px solid #ccc;
+    transform: scale(1.4);
+    left: -3em;
 }
 
 .search-form .form-group input.form-control {
-    padding-right: 20px;
+    padding-right: 5em;
     border: 0 none;
     background: transparent;
     box-shadow: none;
@@ -141,4 +143,16 @@ h1.channel-title {
 
 .modal-content {
     margin: 0px -10px
+}
+
+
+@media(max-width: 990px){
+    .search-form .form-group {
+        
+        transform: scale(1.1);
+        left:1.2em;
+    }
+    .tool-bar {
+        margin-top: -2em;
+    }
 }
