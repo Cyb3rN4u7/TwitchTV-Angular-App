@@ -37,7 +37,7 @@ $scope.searchChannel = function(searchTxt){
 
     if(data.hasOwnProperty('error')){
       var title = "not found: "+ searchTxt;
-      $scope.searchedChannelData = {url:"#", logo:"./img/notfound.jpg",display_name : title, status:"Staring at the unknown",followers: "You", updated_at: "2018-07-15T11:00:43Z",views:"0"};
+      $scope.searchedChannelData = {url:"#", logo:"./img/notfound.jpg",video_banner: "./img/notfoundBackground.jpg" ,display_name : title, status:"Staring at the unknown",followers: "You", updated_at: "2018-07-15T11:00:43Z",views:"0"};
     }
   }).error(function(data){
       $scope.searchedChannelData = {url:"#", logo:"./img/notfound.jpg",display_name : "Errors Gone bad", status:"0",followers: "0", updated_at: "2018-07-15T11:00:43Z",views:"0"};
