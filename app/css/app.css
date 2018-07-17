@@ -14,6 +14,14 @@ h1.channel-title{
     background-color: #363354;
 }
 
+.well {
+ border-radius: 0px;
+
+}
+.col-md-4.well {
+    padding: 1.3em;
+}
+
 .channels {
     background-color: lightblue;
 }
