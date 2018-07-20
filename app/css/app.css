@@ -28,15 +28,15 @@ h1.channel-title {
     background-color: lightblue;
 }
 
-li > h2{
+li>h2 {
     font-size: 1.2em;
     text-align: center;
 }
 
 .list-group-item.list.channel-title {
-	border: none;
-	background: none;
-	font-size: 1.5em;
+    border: none;
+    background: none;
+    font-size: 1.5em;
     font-family: 'Audiowide', cursive;
     color: #e1e122;
 }
@@ -72,10 +72,10 @@ li > h2{
 
 .Footer {
     background-color: #2a0345;
-    padding-top: 30px;
-    padding-bottom: 30px;
     color: #e1e122;
     margin: 6em auto 0;
+    font-size: 1.2em;
+    padding: 3em 0 2em;
 }
 
 .app-title-div {
@@ -160,12 +160,10 @@ li > h2{
     margin: 0px -10px
 }
 
-
-@media(max-width: 990px){
+@media(max-width: 990px) {
     .search-form .form-group {
-        
         transform: scale(1.1);
-        left:1.2em;
+        left: 1.2em;
     }
     .tool-bar {
         margin-top: -2em;
