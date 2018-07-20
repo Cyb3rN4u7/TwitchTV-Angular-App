@@ -9,7 +9,7 @@ $scope.searched = false;
 $scope.isOnline = true;
 $scope.showChannel = false;
 $scope.channelData = [];
-$scope.channelsList = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp","LeagueofLegends", "habathcx", "RobotCaleb", "noobs2ninjas"];
+$scope.channelsList = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp","LeagueofLegends", "habathcx"];
 $scope.searchedList =[];
 $scope.getChannels = function(searchTxt){
   twitchApi.channel(searchTxt).success(function (data){

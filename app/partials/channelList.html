@@ -1,19 +1,22 @@
 <div class="container  text-center ">
-  <h1 class='featured col-sm-8 col-sm-offset-2'>Featured Channels</h1>
-  <div ng-repeat="channel in channelData" class="col-sm-3">
+  <h1 class='featured col-md-12'>Featured Channels</h1>
+  <div ng-repeat="channel in channelData" class="col-sm-4">
 
     <ul class='list-group  details'>
+
+        <li class="list-group-item list channel-title">
+            <h2>{{channel.message ? channel.message : (channel.display_name | uppercase)}}</h2>
+          </li>
+
       <li class="list-group-item list" >
         <a ng-href="{{channel.url}}" target="_blank">  <img class='img-responsive center-block' ng-src='{{channel.logo ? channel.logo : "https://www.spe.org/iapps/abstractsubmission/Content/images/stop.png"}}' />
       </a>
 
 
       </li>
+     
       <li class="list-group-item list">
-        <p>{{channel.message ? channel.message : (channel.display_name | uppercase)}}</p>
-      </li>
-      <li class="list-group-item list">
-        <a href="#" class='btn btn-success' data-toggle="modal" data-target="#myModal" ng-click="searchChannel(channel.display_name)">See Details</a>
+        <a href="#" class='btn btn-success' data-toggle="modal" data-target="#myModal" ng-click="searchChannel(channel.display_name)">Details</a>
       </li>
 
     </ul>
