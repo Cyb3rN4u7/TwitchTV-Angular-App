@@ -35,7 +35,7 @@ li>h2 {
 
 .list-group-item.list.channel-title {
     border: none;
-    background: none;
+    background-color: rgb(42, 3, 69);
     font-size: 1.5em;
     font-family: 'Audiowide', cursive;
     color: #e1e122;
@@ -53,12 +53,18 @@ li>h2 {
     font-size: 1.1em;
     font-weight: bold;
 }
+.list-group{
+    border: 2px solid aqua;
+}
 
 .list {
-    padding: 8px 34px;
+    padding: 1.2em;
     background-color: rgb(42, 3, 69);
     color: white;
-    border: 1px solid #e1e122;
+    border: none;
+}
+.list-group-item:last-child {
+    border-top: 2px solid aqua;
 }
 
 .featured {
